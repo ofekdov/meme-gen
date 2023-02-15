@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meme-editor</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body onload="onInit()">
+
+    <header class="main-header flex space-between align-center">
+        <div class="logo">MEME EDITOR</div>
+        <nav class="main-nav">
+            <ul class="main-menu flex clean-list">
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Memes</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+        <!-- <button type="button" onclick="toggleMenu()">☰</button> -->
+    </header>
+
+    <main class="main-content">
+        
+        <section class="main-editor"> <!-- the editor tools  -->
+            <label for="">Text:</label>
+            <input type="text" name="txt" placeholder="write your text" oninput="onSetLineProp()">
+
+            <label for="">Text Color:</label>
+            <input type="color" name="txt-color" oninput="onSetLineProp()">
+            
+            <label for="">Font Size:<span class="txt-size-number">40</span></label>
+            <input type="range" name="txt-size" min="10" max="100" value="40" oninput="onSetLineProp()">
+
+            <button onclick="onSwitchLine()">Switch Line</button>
+            
+        </section>
+        
+        <section class="canvas-container"> 
+            <canvas id="meme-canvas" width="400" height="400"></canvas>
+        </section>
+
+        <section class="gallery"></section> <!-- PHOTOS GALLERY -->
+
+    </main>
+
+    
+
+    <script src="js/meme/meme-service.js"></script>
+    <script src="js/gallery/gallery-controller.js"></script>
+    <script src="js/meme/meme-controler.js"></script>
+</body>
+
+</html>

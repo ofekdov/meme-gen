@@ -1,0 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    line-height: 1.5;
+}
+
+img {
+    width: 100%;
+}
