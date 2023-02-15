@@ -1,0 +1,7 @@
+.canvas-container {
+    grid-area: canvas;
+}
+
+canvas {
+    border-radius: 10px;
+}

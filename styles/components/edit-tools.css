@@ -1,0 +1,16 @@
+.main-editor {
+    grid-area: tools;
+
+    padding: 2em;
+    width: 400px;
+    height: 100%;
+    border-radius: 10px;
+
+    border: 2px solid black;
+    background-color: cornflowerblue;
+}
+
+.main-editor > * {
+    margin-block-end: 1em;
+    font: 1em sans-serif;
+ }

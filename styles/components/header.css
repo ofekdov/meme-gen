@@ -1,3 +1,13 @@
 .main-header {
     height: 100px;
+    background-color: rgb(255, 236, 175);
+    border-radius: 20px;
+    color: rgb(115, 115, 221);
+    font-size: 1.5em;
+    margin-block-end: 2em;
+    padding-inline: 1em;
+}
+
+.main-header .main-menu li {
+    cursor: pointer;
 }

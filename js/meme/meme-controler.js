@@ -103,3 +103,7 @@ function addListeners() {
     gElCanvas.addEventListener('touchmove', onMove)
     gElCanvas.addEventListener('touchend', onUp)
   }
+
+  function onToggleMenu() {
+    document.body.classList.toggle('menu-open');
+  }

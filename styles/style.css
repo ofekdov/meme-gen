@@ -10,6 +10,12 @@
 /* COMPONENTS */
 @import 'components/header.css';
 @import 'components/logo.css';
+@import 'components/canvas.css';
+@import 'components/edit-tools.css';
+@import 'components/gallery.css';
+@import 'components/screen.css';
+@import 'components/buttons.css';
+
 
 /* MEDIA QUERIS */
 @import 'setup/mq.css';

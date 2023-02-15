@@ -20,6 +20,12 @@ var gMeme = {
             size: 10,
             align: 'left',
             color: 'red'
+        },
+        {
+            txt: '',
+            size: 10,
+            align: 'left',
+            color: 'red'
         }
     ]
 }

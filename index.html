@@ -11,29 +11,36 @@
 
 <body onload="onInit()">
 
+    <div class="main-screen" onclick="onToggleMenu()"></div>
+
     <header class="main-header flex space-between align-center">
         <div class="logo">MEME EDITOR</div>
         <nav class="main-nav">
             <ul class="main-menu flex clean-list">
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Memes</a></li>
-                <li><a href="#">About</a></li>
+                <li onclick="onOpenGallery()">Gallery</li>
+                <li>Memes</li>
+                <li>About</li>
             </ul>
         </nav>
-        <!-- <button type="button" onclick="toggleMenu()">☰</button> -->
+        <button class="hamburger-btn" type="button" onclick="onToggleMenu()">☰</button>
     </header>
 
     <main class="main-content">
         
         <section class="main-editor"> <!-- the editor tools  -->
-            <label for="">Text:</label>
-            <input type="text" name="txt" placeholder="write your text" oninput="onSetLineProp()">
-
-            <label for="">Text Color:</label>
-            <input type="color" name="txt-color" oninput="onSetLineProp()">
+            <div>
+                <label for="">Text:</label>
+                <input type="text" name="txt" placeholder="write your text" oninput="onSetLineProp()">
+            </div>
+            <div>
+                <label for="">Text Color:</label>
+                <input type="color" name="txt-color" oninput="onSetLineProp()">
+            </div>
             
-            <label for="">Font Size:<span class="txt-size-number">40</span></label>
-            <input type="range" name="txt-size" min="10" max="100" value="40" oninput="onSetLineProp()">
+            <div>
+                <label for="">Font Size:<span class="txt-size-number">40</span></label>
+                <input type="range" name="txt-size" min="10" max="100" value="40" oninput="onSetLineProp()">
+            </div>
 
             <button onclick="onSwitchLine()">Switch Line</button>
             
@@ -43,9 +50,9 @@
             <canvas id="meme-canvas" width="400" height="400"></canvas>
         </section>
 
-        <section class="gallery"></section> <!-- PHOTOS GALLERY -->
-
     </main>
+
+    <section class="gallery"></section> <!-- PHOTOS GALLERY -->
 
     
 

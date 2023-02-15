@@ -1,0 +1,9 @@
+.main-content {
+    display: grid;
+    grid-template-areas: 
+    "canvas"
+    "tools"
+    ;
+    align-items: center;
+    justify-items: center;
+}

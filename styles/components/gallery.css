@@ -1,0 +1,25 @@
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    grid-auto-flow: dense;
+    gap: 10px;
+    position: absolute;
+    top: 110px;
+    padding: 1em;
+    width: 100%;
+    height: 100vh;
+
+    z-index: 50;
+    border-radius: 10px;
+    background-color: rgb(252, 165, 103);
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.gallery img {
+    width: 7em;
+    height: 7em;
+    border-radius: 20px;
+}
+
