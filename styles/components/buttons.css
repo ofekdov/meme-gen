@@ -2,11 +2,124 @@ button {
     border-radius: 10px;
     border: none;
     cursor: pointer;
+    padding: 0.3em;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.404);
+    transition: 0.3s;
 }
 
 .hamburger-btn {
-    font-size: 1.5em;
-    background-color: rgb(255, 236, 175);
-    color: rgb(126, 100, 14);
+    font-size: 1.3em;
+    background-color: inherit;
+    /* background-color: rgb(255, 236, 175); */
+    color: rgb(178, 178, 214);
     display: none;
+}
+
+.hamburger-btn:hover {
+    color: rgb(68, 68, 139);
+}
+
+.download-btn {
+    grid-area: download;
+    justify-self: center;
+    align-self: center;
+    display: inline;
+    text-decoration: none;
+    height: 2em;
+    width: max-content;
+    padding: 10px;
+    border-radius: 25px;
+    background: linear-gradient(40deg, #ff6ec4, #7873f5);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+.download-btn:hover {
+    background: linear-gradient(40deg, #ff8ed2, #9793ff);
+}
+
+.arrow-btn {
+    padding: 20px;
+    margin-inline: 2px;
+    color: rgb(103, 103, 226);
+}
+
+.arrow-btn:hover {
+    scale: 1.06;
+    background-color: #7873f5;
+    color: beige;
+}
+
+.left-btn {
+    grid-area: left;
+    justify-self: center;
+    align-self: center;
+}
+.right-btn {
+    grid-area: right;
+    justify-self: start;
+    align-self: center;
+}
+.up-btn {
+    grid-area: up;
+    justify-self: end;
+    align-self: center;
+}
+.down-btn {
+    grid-area: down;
+    justify-self: center;
+    align-self: center;
+}
+
+.add-btn {
+    grid-area: add;
+    justify-self: end;
+    align-self: center;
+    padding: 15px;
+    background: linear-gradient(40deg, #3e683d, #51c446);
+
+}
+
+.add-btn:hover {
+    scale: 1.1;
+    background: linear-gradient(40deg, #4e694d, #78ca70);
+
+}
+
+.switch-btn {
+    grid-area: switch;
+    justify-self: center;
+    align-self: center;
+    padding: 15px;
+    background: linear-gradient(40deg, #6951aa, #9793ff);
+    color: beige;
+}
+
+.switch-btn:hover {
+    background: linear-gradient(40deg, #7e6bb3, #b6b4fd);
+    scale: 1.1;
+}   
+
+.delete-btn {
+    grid-area: delete;
+    justify-self: start;
+    align-self: center;
+    background-color: darkred;
+    color: beige;
+    padding: 15px;
+}
+
+.delete-btn:hover {
+    background-color: rgb(187, 57, 57);
+    scale: 1.1;
+}
+
+.save-btn {
+    grid-area: save;
+    justify-self: center;
+    align-self: center;
 }

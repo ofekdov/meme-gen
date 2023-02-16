@@ -6,6 +6,14 @@ html {
     line-height: 1.5;
 }
 
+body {
+    margin: 0;
+    height: 100%;
+    overflow-x:none;
+    /* background-color: cadetblue; */
+    background-image: url(../../images/body-background.jpg);
+}
+
 img {
     width: 100%;
 }

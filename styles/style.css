@@ -20,20 +20,7 @@
 /* MEDIA QUERIS */
 @import 'setup/mq.css';
 
-body {
-    background-color: cadetblue;
-}
 
-.meme-container {
-    background-color: blue;
-    height: 500px;
-    width: 500px;
-    border-radius: 10px;
-    /* width: 50%; */
-    /* text-align: start; */
-}
 
-canvas {
-    background-color:beige;
-    outline: 2px solid rgb(0, 0, 0)
-}
+
+

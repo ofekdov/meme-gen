@@ -1,7 +1,21 @@
 .canvas-container {
     grid-area: canvas;
+    /* margin-block-end: 1em; */
 }
 
 canvas {
     border-radius: 10px;
+    box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.63);
+    background-color:beige;
+    outline: 2px solid rgb(0, 0, 0)
+
+}
+
+.meme-container {
+    background-color: blue;
+    height: 500px;
+    width: 500px;
+    border-radius: 10px;
+    /* width: 50%; */
+    /* text-align: start; */
 }

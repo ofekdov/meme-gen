@@ -22,7 +22,7 @@ function renderMeme() {
     renderImg(imgId)
 
     memeLines.forEach(line => {
-        drawText(150, 150, line.size, line.color, line.txt)
+        drawText(line.x, line.y, line.size, line.color, line.txt)
     })
 }
 
@@ -32,7 +32,6 @@ function renderImg(imgId) {
     // When the image ready draw it on the canvas
 
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-
 }
 
 function onSwitchLine() {
@@ -61,7 +60,7 @@ function renderTxtSize(sizeNum) { // render the size of the text on every input
 }
 
 function drawText(x, y, size, color, txt, font) {
-    gCtx.lineWidth = 1
+    // gCtx.lineWidth = 3
     gCtx.strokeStyle = 'white'
 
     gCtx.fillStyle = color
@@ -88,22 +87,60 @@ function addListeners() {
     // addTouchListeners()
     //Listen for resize ev
     window.addEventListener('resize', () => {
-      resizeCanvas()
+        resizeCanvas()
     })
-  }
-  
-  function addMouseListeners() {
+}
+
+function addMouseListeners() {
     gElCanvas.addEventListener('mousedown', onDown)
     gElCanvas.addEventListener('mousemove', onMove)
     gElCanvas.addEventListener('mouseup', onUp)
-  }
-  
-  function addTouchListeners() {
+}
+
+function addTouchListeners() {
     gElCanvas.addEventListener('touchstart', onDown)
     gElCanvas.addEventListener('touchmove', onMove)
     gElCanvas.addEventListener('touchend', onUp)
-  }
+}
 
-  function onToggleMenu() {
+function onToggleMenu() {
     document.body.classList.toggle('menu-open');
-  }
+}
+
+// *********** arrow functions ************//
+
+function onArrowUp() {
+    arrowUp()
+    renderMeme()
+}
+
+function onArrowDown() {
+    arrowDown()
+    renderMeme()
+}
+
+function onArrowRight() {
+    arrowRight()
+    renderMeme()
+}
+
+function onArrowLeft() {
+    arrowLeft()
+    renderMeme()
+}
+
+function onDeleteLine() {
+    deleteLine()
+    renderMeme()
+    document.querySelector('[name="txt"]').value = '' //delete the txt i  input when delete a line
+}
+
+function onAddLine() {
+    addLine()
+    renderMeme()
+    document.querySelector('[name="txt"]').value = ''
+}
+
+function onLogoClick() { // get back to memes editor
+    onCloseGallery()
+}

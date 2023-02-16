@@ -1,0 +1,11 @@
+.logo {
+    font-family: inconsolata, monospace;
+    letter-spacing: 0.2em;
+    font-weight:inherit;
+    cursor: pointer;
+}
+
+.logo:hover {
+    color: rgb(203, 203, 228);
+    scale:1.05;
+}

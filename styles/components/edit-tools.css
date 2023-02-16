@@ -1,16 +1,119 @@
 .main-editor {
+    display: grid;
+    /* grid-template-columns: repeat(7,1em);
+    grid-template-rows: repeat(7,1em); */
+    grid-template-areas: 
+    "text text text text"
+    "color add switch delete"
+    "size size range range"
+    "up down left right"
+    "download download save font"
+    ;
     grid-area: tools;
 
-    padding: 2em;
+    padding: 0.5em;
     width: 400px;
     height: 100%;
     border-radius: 10px;
 
     border: 2px solid black;
-    background-color: cornflowerblue;
+    background-image: url(../../images/main-editor.jpg);
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+    
+    /* background-color: cornflowerblue; */
+
+    font-size: 1.2em;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.63);
 }
 
-.main-editor > * {
+.main-editor>* {
     margin-block-end: 1em;
     font: 1em sans-serif;
- }
+}
+
+.txt-size {
+    grid-area: size;
+    justify-self: center;
+    align-self: center;
+    color:whitesmoke;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 200;   
+}
+
+input[type=text] {
+    grid-area: text;
+    justify-self: center;
+    align-self: center;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 85%;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.5);
+}
+
+input[type=text]:hover {
+    scale: 1.1;
+}
+
+input[type=color] {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+    display: hidden;
+}
+
+.color-label {
+    grid-area: color;
+    justify-self: end;
+    align-self: center;
+    display: inline;
+    position: relative;
+    width: 3em;
+    height: 3em;
+    border-radius: 25px;
+    background: linear-gradient(40deg, #6baabd, #15142e);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform .2s ease-out;
+}
+
+.color-label:hover {
+    background: linear-gradient(40deg, #80b4c4, #353455);
+    scale: 1.1;
+}
+
+input[type=file]::before {
+    content: 'Select Image';
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+}
+
+select {
+    grid-area:font;
+    justify-self: start;
+    align-self: center;
+    padding: 5px;
+    width: 90px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+
+}
+
+input[type=range] {
+    grid-area: range;
+    justify-self: center;
+    align-self: center;
+}

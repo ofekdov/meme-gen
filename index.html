@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>meme-editor</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/a7aadba86c.js" crossorigin="anonymous"></script>
 </head>
 
 <body onload="onInit()">
@@ -14,7 +15,7 @@
     <div class="main-screen" onclick="onToggleMenu()"></div>
 
     <header class="main-header flex space-between align-center">
-        <div class="logo">MEME EDITOR</div>
+        <div onclick="onLogoClick()" class="logo">MEME EDITOR</div>
         <nav class="main-nav">
             <ul class="main-menu flex clean-list">
                 <li onclick="onOpenGallery()">Gallery</li>
@@ -26,27 +27,55 @@
     </header>
 
     <main class="main-content">
-        
-        <section class="main-editor"> <!-- the editor tools  -->
-            <div>
-                <label for="">Text:</label>
-                <input type="text" name="txt" placeholder="write your text" oninput="onSetLineProp()">
-            </div>
-            <div>
-                <label for="">Text Color:</label>
-                <input type="color" name="txt-color" oninput="onSetLineProp()">
-            </div>
-            
-            <div>
-                <label for="">Font Size:<span class="txt-size-number">40</span></label>
-                <input type="range" name="txt-size" min="10" max="100" value="40" oninput="onSetLineProp()">
-            </div>
 
-            <button onclick="onSwitchLine()">Switch Line</button>
-            
+        <section class="main-editor"> <!-- the editor tools  -->
+
+            <!-- <label for="">Text:</label> -->
+            <input type="text" name="txt" placeholder="write your text" oninput="onSetLineProp()">
+
+
+                <label class="color-label" for="color"><i class="fa-solid fa-palette"></i></label>
+                <input type="color" name="txt-color" id="color" oninput="onSetLineProp()">
+           
+
+            <button onclick="onAddLine()" class="add-btn"><i class="fa-solid fa-plus"></i></button>
+            <button class="switch-btn" title="switch line" onclick="onSwitchLine()"><i
+                    class="fa-solid fa-arrow-down-up-across-line"></i></button>
+            <button onclick="onDeleteLine()" class="delete-btn"><i class="fa-solid fa-trash-can"></i></button>
+
+
+
+            <label for="" class="txt-size">Text Size: <span class="txt-size-number">40</span></label>
+            <input type="range" name="txt-size" min="10" max="100" value="40" oninput="onSetLineProp()">
+
+
+            <button onclick="onArrowLeft()" class="left-btn arrow-btn"><i class="fa-solid fa-arrow-left"></i></button>
+            <button onclick="onArrowRight()" class="right-btn arrow-btn"><i class="fa-solid fa-arrow-right"></i></button>
+            <button onclick="onArrowUp()" class="up-btn arrow-btn"><i class="fa-solid fa-arrow-up"></i></button>
+            <button onclick="onArrowDown()" class="down-btn arrow-btn"><i class="fa-solid fa-arrow-down"></i></button>
+
+            <!-- <div class="file-input">
+                <input type="file" class="file-input btn" id="file" onchange="onImgInput(event)">
+                <label for="file" title="upload image"><i class="fa-regular fa-image"></i></label>
+            </div> -->
+            <a href="#" class="download-btn" onclick="downloadCanvas(this)" download="my-meme.jpg">Download</a>
+
+            <button class="save-btn" onclick="onSaveImg()">Save</button>
+
+            <button class="upload-btn" onclick="onUploadImg()">upload</button>
+
+
+
+            <select name="txt-font" id="">
+                <option value="impact">Impact</option>
+                <option value="impact">Impact</option>
+                <option value="impact">Impact</option>
+                <option value="impact">Impact</option>
+            </select>
         </section>
-        
-        <section class="canvas-container"> 
+
+
+        <section class="canvas-container">
             <canvas id="meme-canvas" width="400" height="400"></canvas>
         </section>
 
@@ -54,11 +83,12 @@
 
     <section class="gallery"></section> <!-- PHOTOS GALLERY -->
 
-    
+
 
     <script src="js/meme/meme-service.js"></script>
-    <script src="js/gallery/gallery-controller.js"></script>
     <script src="js/meme/meme-controler.js"></script>
+    <script src="js/gallery/gallery-controller.js"></script>
+    <script src="js/util.js"></script>
 </body>
 
 </html>

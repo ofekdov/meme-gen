@@ -1,13 +1,25 @@
 .main-header {
     height: 100px;
-    background-color: rgb(255, 236, 175);
+    /* background-color: rgb(255, 236, 175); */
+    background-image: url(../../images/Header-Background.jpg);
     border-radius: 20px;
-    color: rgb(115, 115, 221);
+    color: rgb(178, 178, 214);
     font-size: 1.5em;
     margin-block-end: 2em;
     padding-inline: 1em;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.63);
+
 }
 
 .main-header .main-menu li {
     cursor: pointer;
+}
+
+.main-header .main-menu li:not(:last-child) {
+    margin-inline-end: 2em;
+}
+
+.main-header .main-menu li:hover {
+    color: rgb(98, 98, 158);
+    scale: 1.1;
 }

@@ -4,6 +4,10 @@
 function renderGallery() {
     const elGallery = document.querySelector('.gallery')
     let strHtml = `
+    <div class="file-input">
+        <input type="file" class="file-input btn" id="file" onchange="onImgInput(event)">
+        <label for="file" title="upload image"><i class="fa-regular fa-image"></i></label>
+    </div>
     <img onclick="onImgSelect(this)" data-id="1" src="images/1.jpg">
     <img onclick="onImgSelect(this)" data-id="2" src="images/2.jpg">
     <img onclick="onImgSelect(this)" data-id="3" src="images/3.jpg">
