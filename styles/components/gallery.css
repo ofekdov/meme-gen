@@ -22,8 +22,6 @@
 }
 
 .gallery img {
-    max-width: 150px;
-    max-height: 150px;
     border-radius: 20px;
     cursor: pointer;
 }
@@ -59,4 +57,5 @@ input[type=file] {
 
 .file-input label:hover {
     background: linear-gradient(40deg, #ff8ed2, #9793ff);
+    scale:1.1;
 }

@@ -34,14 +34,19 @@ function onOpenGallery() {
     const elGallery = document.querySelector('.gallery')
     elGallery.style.opacity = 1
     elGallery.style.pointerEvents = 'auto'
-
     document.body.classList.remove('menu-open');
+
+    const elGalleryBtn = document.querySelector('.gallery-btn')
+    elGalleryBtn.classList.add('active')
 }
 
 function onCloseGallery() {
     const elGallery = document.querySelector('.gallery')
     elGallery.style.opacity = 0
     elGallery.style.pointerEvents = 'none'
+
+    const elGalleryBtn = document.querySelector('.gallery-btn')
+    elGalleryBtn.classList.remove('active')
 }
 
 function onImgSelect(el) {

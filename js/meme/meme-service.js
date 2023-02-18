@@ -14,11 +14,12 @@ var gMeme = {
     lines: [
         {
             txt: '',
-            size: 10,
+            size: 20,
             align: 'left',
-            color: 'black',
+            color: 'white',
             x: 150,
-            y: 100
+            y: 100,
+            font:'impact'
         }
     ]
 }
@@ -90,14 +91,30 @@ function deleteLine() {
 
 function addLine() {
     let line = {
-        txt: '',
-        size: 10,
+        txt: '  ',
+        size: 40,
         align: 'left',
-        color: 'black',
+        color: 'white',
         x: 150,
-        y: 150
+        y: 180,
+        font:'impact'
     }
     gMeme.lines.push(line)
     gMeme.selectedLineIdx+=1
 }
+
+function fontChange(font) {
+    const currLineIdx = gMeme.selectedLineIdx
+    gMeme.lines[currLineIdx].font = font
+}
+
+function textClicked(idx) {
+    gMeme.selectedLineIdx = idx
+}
+
+function saveImgInMeme(img) {
+    gMeme['img'] = img
+}
+
+
 

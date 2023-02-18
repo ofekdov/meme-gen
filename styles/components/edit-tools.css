@@ -109,7 +109,14 @@ select {
     border-radius: 10px;
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.5);
     cursor: pointer;
+    color: lightskyblue;
+    background-color: #15142e;
 
+}
+
+select:hover {
+    background-color: #302f46;
+    scale: 1.05;
 }
 
 input[type=range] {

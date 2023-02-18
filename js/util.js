@@ -32,18 +32,20 @@ function loadImageFromInput(ev, onImageReady) {
 }
 
 function downloadCanvas(elLink) {
+    renderMemeForDownLoad()
     // Gets the canvas content and convert it to base64 data URL that can be save as an image
     const data = gElCanvas.toDataURL() // Method returns a data URL containing a representation of the image in the format specified by the type parameter.
     // console.log('data', data) // Decoded the image to base64
     elLink.href = data // Put it on the link
-    elLink.download = 'my-canvas' // Can change the name of the file
+    elLink.download = 'my-Meme' // Can change the name of the file
+    renderMeme()
 }
 
 function renderLoadImage(img) {
     // const img1 = new Image() // Create a new html img element
     // img.src = `images/loadImg.jpg` // Send a network req to get that image, define the img src
     // When the image ready draw it on the canvas
-
+    saveImgInMeme(img)
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 }
 
@@ -89,18 +91,6 @@ function doUploadImg(imgDataUrl, onSuccess) {
     XHR.send(formData)
 }
 //************************************************/
-
-function addMouseListeners() {
-    gElCanvas.addEventListener('mousedown', onDown)
-    gElCanvas.addEventListener('mousemove', onMove)
-    gElCanvas.addEventListener('mouseup', onUp)
-}
-
-function addTouchListeners() {
-    gElCanvas.addEventListener('touchstart', onDown)
-    gElCanvas.addEventListener('touchmove', onMove)
-    gElCanvas.addEventListener('touchend', onUp)
-}
 
 ////////////////////
 
