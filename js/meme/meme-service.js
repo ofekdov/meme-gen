@@ -1,8 +1,6 @@
 'use strict'
 
 
-// let canvasWidth = getCanvasWidth()
-// let canvasHeight = getCanvasHeight()
 var gImgs = [
     { id: 1, url: 'images/1.jpg', keywords: ['funny', 'trump'] },
     { id: 2, url: 'images/2.jpg', keywords: ['cute', 'dog'] },
@@ -47,6 +45,7 @@ function setLineSize(size) {
 
 function setImg(imgId) { //set the selected img on the gMeme
     gMeme.selectedImgId = imgId
+    gMeme['loadImg'] = null
 }
 
 function switchLine() {
@@ -113,7 +112,12 @@ function textClicked(idx) {
 }
 
 function saveImgInMeme(img) {
-    gMeme['img'] = img
+    gMeme['loadImg'] = img
+}
+
+function changeGMemeToStorageMeme(meme) {
+    gMeme = meme
+    document.querySelector('[name="txt"]').value = gMeme.lines[gMeme.selectedLineIdx].txt
 }
 
 

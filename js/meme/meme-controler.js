@@ -13,6 +13,7 @@ function onInit() {
 
     renderMeme()
     renderGallery()
+    onOpenGallery()
 }
 
 function renderMeme() {
@@ -20,12 +21,12 @@ function renderMeme() {
     const imgId = meme.selectedImgId
     const memeLines = meme.lines
 
-    if(meme.img) renderLoadImage(meme.img)
+    if(meme.loadImg) renderLoadImage(meme.loadImg)
     else renderImg(imgId)
 
     memeLines.forEach((line, idx) => {
         drawText(line.x, line.y, line.size, line.color, line.txt, line.font)
-        if (idx === meme.selectedLineIdx && !meme.isDownload) drawBorderRectLine(line.x, line.y, line.size, line.txt)
+        if (idx === meme.selectedLineIdx) drawBorderRectLine(line.x, line.y, line.size, line.txt)
     })
 }
 
@@ -222,7 +223,7 @@ function isTextClicked(clickedPos) {
         let lineXDiff = line.x - lineWidth / 2 - 10
         let lineYDiff = line.y - lineHeight / 2
         // checks if clicked pos is on the line
-        if (clickedPos.x < lineXDiff || clickedPos.x > line.x + lineWidth / 2) return
+        if (clickedPos.x < lineXDiff || clickedPos.x > line.x + lineWidth) return
         if (clickedPos.y < lineYDiff - 10 || clickedPos.y > line.y + lineHeight) return
         lineClickedIdx = idx
 
@@ -230,6 +231,24 @@ function isTextClicked(clickedPos) {
     textClicked(lineClickedIdx)
     renderMeme()
 }
+
+function onSaveMeme() {
+    flashMsg('meme saved')
+    let meme = {...gMeme, dataUrl: gElCanvas.toDataURL('image/jpeg')}
+    console.log('meme',meme)
+    saveMemeToStorage(meme)
+}
+
+function flashMsg(msg) {
+    const el = document.querySelector('.user-msg');
+    el.innerText = msg;
+    el.classList.add('open');
+    setTimeout(() => {
+        el.classList.remove('open');
+    }, 3000);
+}
+
+
 
 
 

@@ -4,9 +4,9 @@
 function renderGallery() {
     const elGallery = document.querySelector('.gallery')
     let strHtml = `
-    <div class="file-input">
+    <div class="main-file-input">
         <input type="file" class="file-input btn" id="file" onchange="onImgInput(event)">
-        <label for="file" title="upload image"><i class="fa-regular fa-image"></i></label>
+        <label for="file" title="upload image"><i class="fa-solid fa-plus"></i></label>
     </div>
     <img onclick="onImgSelect(this)" data-id="1" src="images/1.jpg">
     <img onclick="onImgSelect(this)" data-id="2" src="images/2.jpg">
@@ -31,6 +31,8 @@ function renderGallery() {
 }
 
 function onOpenGallery() {
+    renderGallery()
+    onCloseSavedGallery()
     const elGallery = document.querySelector('.gallery')
     elGallery.style.opacity = 1
     elGallery.style.pointerEvents = 'auto'
@@ -38,6 +40,9 @@ function onOpenGallery() {
 
     const elGalleryBtn = document.querySelector('.gallery-btn')
     elGalleryBtn.classList.add('active')
+
+    const elMainContent = document.querySelector('.main-content')
+    elMainContent.classList.add('hide')
 }
 
 function onCloseGallery() {
@@ -47,6 +52,9 @@ function onCloseGallery() {
 
     const elGalleryBtn = document.querySelector('.gallery-btn')
     elGalleryBtn.classList.remove('active')
+
+    const elMainContent = document.querySelector('.main-content')
+    elMainContent.classList.remove('hide')
 }
 
 function onImgSelect(el) {

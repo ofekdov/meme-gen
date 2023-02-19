@@ -1,22 +1,25 @@
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, 1fr);
     grid-auto-flow: dense;
+    justify-items: center;
     gap: 10px;
-    position: absolute;
-    top: 110px;
+    /* position: absolute; */
+    /* top: 110px; */
     padding: 1em;
-    width: 100%;
+    width: 97%;
     height: max-content;
 
     z-index: 50;
     border-radius: 20px;
-    background-image: url("../../images/gallery-background.jpg");
+    /* background-image: url("../../images/gallery-background.jpg"); */
+    background-color: rgba(158, 158, 158, 0.781);
     background-size: cover;
     background-repeat:no-repeat;
     background-position: center center;
     opacity: 0;
 
+    margin: auto;
     pointer-events: none;
     box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.404);
 }
@@ -24,11 +27,12 @@
 .gallery img {
     border-radius: 20px;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .gallery img:hover {
     opacity: 0.8;
-    scale: 1.1;
+    scale: 1.05;
 }
 
 input[type=file] {
@@ -38,13 +42,18 @@ input[type=file] {
     position: absolute;
 }
 
-.file-input label {
-    display: inline;
-    position: relative;
-    width: 3em;
-    height: 3em;
-    border-radius: 25px;
-    background: linear-gradient(40deg, #ff6ec4, #7873f5);
+.main-file-input {
+    height: 100%;
+    width: 100%;
+}
+
+.main-file-input label {
+    /* display: inline; */
+    width: 100%; 
+    height: 100%;
+
+    border-radius: 10px;
+    background: linear-gradient(40deg, #5e4c57, #bdbcd4);
     box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
@@ -52,10 +61,10 @@ input[type=file] {
     color: #fff;
     font-weight: bold;
     cursor: pointer;
-    transition: transform .2s ease-out;
+    transition: .3s ;
 }
 
-.file-input label:hover {
+.main-file-input label:hover {
     background: linear-gradient(40deg, #ff8ed2, #9793ff);
-    scale:1.1;
+    scale:1.05;
 }

@@ -52,7 +52,7 @@
     }
 
     .gallery {
-        top: 73px;
+        top: 100px;
         height: 100vh;
     }
 
@@ -73,14 +73,13 @@
         height: 250px;
     }
 
-    .gallery img {
-        max-width: 150px;
-        max-height: 150px;
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
     }
     
-    input[type=text] {
+    /* input[type=text] {
         width: 10em;
-    }
+    } */
 
 }
 
@@ -96,12 +95,6 @@
         margin-block-end: 10px;
     }
 
-    .gallery {
-        top: 76px;
-        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-        height: 150vh;
-    }
-
     canvas {
         width: 350px;
         height: 350px;
@@ -113,10 +106,6 @@
         max-height: max-content;
         font-size: 1em;
 
-    }
-    .gallery img {
-        max-width: 350px;
-        max-height: 350px;
     }
 
 }
@@ -133,11 +122,11 @@
     }
 
     .gallery {
-        height: 100vh;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
     }
 
     input[type=text] {
-        width: 85%;
+        width: 100%;
     }
 
 }

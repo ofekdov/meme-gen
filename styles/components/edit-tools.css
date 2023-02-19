@@ -7,7 +7,8 @@
     "color add switch delete"
     "size size range range"
     "up down left right"
-    "download download save font"
+    "download download font font"
+    " facebook empty save save"
     ;
     grid-area: tools;
 
@@ -74,7 +75,7 @@ input[type=color] {
     position: relative;
     width: 3em;
     height: 3em;
-    border-radius: 25px;
+    border-radius: 10px;
     background: linear-gradient(40deg, #6baabd, #15142e);
     box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
     display: flex;
@@ -102,10 +103,11 @@ input[type=file]::before {
 
 select {
     grid-area:font;
-    justify-self: start;
+    justify-self: end;
     align-self: center;
     padding: 5px;
-    width: 90px;
+    width: 7.5em;
+    height: 2em;
     border-radius: 10px;
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.5);
     cursor: pointer;
@@ -123,4 +125,8 @@ input[type=range] {
     grid-area: range;
     justify-self: center;
     align-self: center;
+}
+
+.hide {
+    display: none;
 }

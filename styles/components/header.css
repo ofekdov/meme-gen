@@ -5,7 +5,8 @@
     border-radius: 20px;
     color: rgb(178, 178, 214);
     font-size: 1.5em;
-    margin-block-end: 2em;
+    margin-block: 1em 2em;
+    margin-inline: 0.5em;
     padding-inline: 1em;
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.63);
 

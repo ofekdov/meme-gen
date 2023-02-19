@@ -15,15 +15,15 @@
     <div class="main-screen" onclick="onToggleMenu()"></div>
 
     <header class="main-header flex space-between align-center">
-        <div onclick="onLogoClick()" class="logo">MEME EDITOR</div>
+        <div onclick="onLogoClick()" title="back to edit" class="logo">MEME EDITOR</div>
         <nav class="main-nav">
             <ul class="main-menu flex clean-list">
-                <li class="gallery-btn" onclick="onOpenGallery()">Gallery</li>
-                <li>Memes</li>
+                <li class="gallery-btn" title="open memes gallery" onclick="onOpenGallery()">Gallery</li>
+                <li class="saved-memes-btn" title="open saved memes" onclick="onOpenSavedGallery()">Memes</li>
                 <li>About</li>
             </ul>
         </nav>
-        <button class="hamburger-btn" type="button" onclick="onToggleMenu()">☰</button>
+        <button class="hamburger-btn" title="open menu" type="button" onclick="onToggleMenu()">☰</button>
     </header>
 
     <main class="main-content">
@@ -34,36 +34,37 @@
             <input type="text" name="txt" placeholder="write your text" oninput="onSetLineProp()">
 
 
-            <label class="color-label" for="color"><i class="fa-solid fa-palette"></i></label>
+            <label class="color-label" title="choose color" for="color"><i class="fa-solid fa-palette"></i></label>
             <input type="color" name="txt-color" id="color" value="#ffffff" oninput="onSetLineProp()">
 
 
-            <button onclick="onAddLine()" class="add-btn"><i class="fa-solid fa-plus"></i></button>
-            <button class="switch-btn" title="switch line" onclick="onSwitchLine()"><i
+            <button onclick="onAddLine()" title="add line" class="add-btn"><i class="fa-solid fa-plus"></i></button>
+            <button class="switch-btn" title="switch between lines" onclick="onSwitchLine()"><i
                     class="fa-solid fa-arrow-down-up-across-line"></i></button>
-            <button onclick="onDeleteLine()" class="delete-btn"><i class="fa-solid fa-trash-can"></i></button>
+            <button onclick="onDeleteLine()" title="delete line" class="delete-btn"><i class="fa-solid fa-trash-can"></i></button>
 
 
 
             <label for="" class="txt-size">Text Size: <span class="txt-size-number">40</span></label>
-            <input type="range" name="txt-size" min="10" max="100" value="40" oninput="onSetLineProp()">
+            <input type="range" title="change font" name="txt-size" min="10" max="100" value="40" oninput="onSetLineProp()">
 
 
-            <button onclick="onArrowLeft()" class="left-btn arrow-btn"><i class="fa-solid fa-arrow-left"></i></button>
-            <button onclick="onArrowRight()" class="right-btn arrow-btn"><i
-                    class="fa-solid fa-arrow-right"></i></button>
-            <button onclick="onArrowUp()" class="up-btn arrow-btn"><i class="fa-solid fa-arrow-up"></i></button>
-            <button onclick="onArrowDown()" class="down-btn arrow-btn"><i class="fa-solid fa-arrow-down"></i></button>
+            <button onclick="onArrowLeft()" title="arrow left" class="left-btn arrow-btn"><i class="fa-solid fa-arrow-left"></i></button>
+            <button onclick="onArrowRight()" title="arrow right" class="right-btn arrow-btn">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <button onclick="onArrowUp()" title="arrow up" class="up-btn arrow-btn"><i class="fa-solid fa-arrow-up"></i></button>
+            <button onclick="onArrowDown()" title="arrow down" class="down-btn arrow-btn"><i class="fa-solid fa-arrow-down"></i></button>
 
-            <a href="#" class="download-btn" onclick="downloadCanvas(this)" download="my-meme.jpg">Download</a>
+            <a href="#" class="download-btn" title="download meme" onclick="downloadCanvas(this)" download="my-meme.jpg">Download</a>
 
-            <button class="save-btn" onclick="onSaveImg()">Save</button>
+            <button class="save-btn" title="save meme" onclick="onSaveMeme()">Save</button>
 
-            <button class="upload-btn" onclick="onUploadImg()"><i class="fa-brands fa-square-facebook"></i></button>
+            <button class="upload-btn" title="upload to facebook" onclick="onUploadImg()"><i class="fa-brands fa-square-facebook"></i></button>
 
 
 
-            <select name="txt-font" id="" onchange="onFontChange()">
+            <select name="txt-font" id="" title="change line font" onchange="onFontChange()">
                 <option value="impact">Impact</option>
                 <option value="'Courier New', Courier, monospace">Courier</option>
                 <option value="Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Gothic</option>
@@ -80,9 +81,13 @@
 
     <section class="gallery"></section> <!-- PHOTOS GALLERY -->
 
+    <div class="user-msg"></div>
 
     <script src="js/meme/meme-service.js"></script>
+    <script src="js/saved-memes/saved-memes-service.js"></script>
+    <script src="js/upload-service.js"></script>
     <script src="js/meme/meme-controler.js"></script>
+    <script src="js/saved-memes/saves-memes-controller.js"></script>
     <script src="js/gallery/gallery-controller.js"></script>
     <script src="js/util.js"></script>
 </body>
